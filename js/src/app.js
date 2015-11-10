@@ -12,8 +12,9 @@ var HelloWorldLayer = cc.Layer.extend({
         // ask the window size
         var size = cc.winSize;
 
-        var mainscene = ccs.load(res.MainScene_json);
-        this.addChild(mainscene.node);
+        var coinsLabel = cc.Label.createWithSystemFont("Hello World", "Arial", 64);
+        coinsLabel.setPosition(size.width/2, size.height/2);
+        this.addChild(coinsLabel);
 
         return true;
     }

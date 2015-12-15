@@ -4,11 +4,11 @@ local MainScene = class("MainScene", cc.load("mvc").ViewBase)
 -- MainScene.RESOURCE_FILENAME = "MainScene.csb"
 
 function MainScene:onCreate()
-
+    sdkbox.IAP:init()
 	cc.MenuItemFont:setFontName("Arial")
     cc.Menu:create(
                    cc.MenuItemFont:create("clickme"):onClicked(function()
-                        print("on click")
+                        sdkbox.IAP:purchase("coin_package")
                     end)
                    )
         :move(display.cx, display.cy)
